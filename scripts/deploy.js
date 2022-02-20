@@ -1,14 +1,12 @@
 async function main() {
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const ESKToken = await hre.ethers.getContractFactory("ESKToken");
+  const eskToken = await ESKToken.deploy("Eskaine Token", "ESK");
 
-  await greeter.deployed();
+  await eskToken.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("Contract deployed to:", eskToken.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main()
   .then(() => process.exit(0))
   .catch((error) => {
