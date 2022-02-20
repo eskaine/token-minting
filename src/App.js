@@ -4,15 +4,13 @@ import { ethers } from 'ethers'
 import Token from './artifacts/contracts/Token.sol/ESKToken.json'
 import { formatUnits, parseUnits } from 'ethers/lib/utils';
 
-const tokenAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+const tokenAddress = "0x89CF7e0E3a164b721A288B7ebf0CcB6CEB85c2CC";
 
 function App() {
   const [userAccount, setUserAccount] = useState();
   const [amount] = useState('10');
   const [balance, setBalance] = useState();
   const [statusMessage, setStatusMessage] = useState("");
-
-
 
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
